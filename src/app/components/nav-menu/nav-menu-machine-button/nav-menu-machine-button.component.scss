@@ -1,0 +1,13 @@
+.machine-button {
+    background-color: #dcdcdc;
+    padding: 16px 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.machine-button i {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}

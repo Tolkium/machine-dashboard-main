@@ -1,0 +1,10 @@
+<div class="graph">
+    @if (lineMachineService.machines$ | async; as machines) {
+        @for (machine of machines; track machine) {
+            <machine-graph-button
+                class="machine-graph-button"
+                [machine]="machine"
+            />
+        }
+    }
+</div>

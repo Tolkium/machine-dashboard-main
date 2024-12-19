@@ -1,0 +1,30 @@
+<nav class="nav-menu">
+    <div class="nav-row">
+        <div class="logo">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Logo_B%C3%BChler_AG.svg/1200px-Logo_B%C3%BChler_AG.svg.png"
+                alt="Logo"
+            />
+        </div>
+        <div class="user-info">
+            <div>
+                <i class="material-icons">schedule</i>
+                <span>{{ currentDateTime | date: "dd.MM.yyyy HH:MM" }}</span>
+            </div>
+            <div>
+                <i class="material-icons">face_4</i>
+                <span>{{ userName }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="nav-row buttons">
+        @if (lineMachineService.machines$ | async; as machines) {
+            @for (machine of machines; track machine) {
+                <nav-menu-machine-button
+                    [machine]="machine"
+                ></nav-menu-machine-button>
+            }
+        }
+    </div>
+</nav>
